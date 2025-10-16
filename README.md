@@ -3,7 +3,7 @@
 **Project aim.** Analyze sensor data from a tomato field experiment with three irrigation regimes (L100 ≈ 100%, L60 ≈ 60%, L30 ≈ 30% of the Irriframe recommendation). We tidy the raw logs into a single **long-format** CSV and detect anomalous soil-humidity behavior with an **Isolation Forest**, optionally explaining anomalies with **SHAP** and grouping them into interpretable periods.
 
 > Context used in the modeling choices:  
-> • Early phase: all lines irrigated as I100 until flowering (so early cross-line comparisons are not meaningful).  
+> • Early phase: all lines irrigated as L100 until flowering (so early cross-line comparisons are not meaningful).  
 > • Two sensor-repositioning events occurred; data are considered reliable **after** the second event.
 
 ---
@@ -49,7 +49,7 @@ Use relative paths only (repo root).
 - **Features**: time‑series transforms on soil humidity , EC and soil temperature (lags, rolling means/stdev over short windows, simple slopes) + selected environment vars.  
 - **Scaling & fit**: `StandardScaler` fit on **training subset only**; `IsolationForest(n_estimators=800, max_samples=512, max_features=0.8, bootstrap=True, random_state=42)`.  
 - **Thresholding**: a timestamp is anomalous if its `decision_function` is in the **lowest q‑quantile** of **training** scores (default `q=0.01`).  
-- **Evaluation**: predictions are compared against predeclared **ground‑truth (GT) windows** (early I100 phase; two sensor events). We report **precision** only.
+- **Evaluation**: predictions are compared against predeclared **ground‑truth (GT) windows** (early L100 phase; two sensor events). We report **precision** only.
 
 ---
 
