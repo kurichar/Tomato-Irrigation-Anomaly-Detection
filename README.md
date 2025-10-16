@@ -78,7 +78,7 @@ A very interactive plot visualizing anomalies is generated, describing anomalies
 <img width="2152" height="1100" alt="Anomaly plot" src="https://github.com/user-attachments/assets/5a5bf05b-0126-4d15-b1a6-038193c5d61c" />
 <img width="946" height="339" alt="image" src="https://github.com/user-attachments/assets/c6e8b672-b874-452b-bc63-d9d048d2d4d4" />
 
-For a fully offline interactive version, see [docs/soil_humidity_L30.html](docs/soil_humidity_L30.html).
+For a fully offline interactive version, see [docs/soil_humidity_L30.html](https://kurichar.github.io/Tomato-Irrigation-Anomaly-Detection/soil_humidity_L30.html).
 
 ---
 
